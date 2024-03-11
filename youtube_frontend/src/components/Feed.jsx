@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 
 import { Videos, Sidebar } from "./";
 import { useParams } from "react-router-dom";
-import { getVideoAPI } from "../utils/fetchFromAPI";
+import { getVideoAPI, getVideoByTypeAPI } from "../utils/fetchFromAPI";
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
@@ -13,20 +13,30 @@ const Feed = () => {
 
   useEffect(() => {
 
+    if (params.id)
+      getVideoByTypeAPI(params.id).then(result => {
+        setVideos(result)
 
+      })
+    else
+      getVideoAPI().then(result => {
+
+        setVideos(result)
+      }).catch()
 
   }, [params.id]);
 
-  useEffect(() => {
+
+  // useEffect(() => {
+
+  //   getVideoAPI().then(result => {
+  //     console.log(result)
+  //     setVideos(result)
+  //   }).catch()
 
 
-    getVideoAPI().then(result => {
-      console.log(result)
-      setVideos(result)
-    }).catch()
+  // }, [])
 
-
-  }, [])
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
