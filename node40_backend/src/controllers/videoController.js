@@ -17,7 +17,7 @@ const getVideo = async (req, res) => {
     // [{} , {} , {} , {}]
     // {}
     let data = await model.video.findAll({
-        include: [model.video_type, model.users]
+        include: ["video_type", "user"]
     });
 
     // let data = await Video.findByPk(2);
@@ -72,10 +72,24 @@ const getVideoPage = async (req, res) => {
 }
 
 
+const getVideoById = async (req, res) => {
+
+    let { videoId } = req.params;
+
+    // SELECT * FROM video LIMIT index , pageSize
+    let data = await model.video.findByPk(videoId, { include: ["user"] });
+
+
+    responseData(res, "Thành công", 200, data)
+
+}
+
+
 export {
     getVideo,
     searchVideo,
     getVideoType,
     getVideoByType,
-    getVideoPage
+    getVideoPage,
+    getVideoById
 }

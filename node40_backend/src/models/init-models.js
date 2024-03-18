@@ -15,8 +15,8 @@ export default function initModels(sequelize) {
   const video_like = _video_like.init(sequelize, DataTypes);
   const video_type = _video_type.init(sequelize, DataTypes);
 
-  video.belongsTo(users, { foreignKey: "user_id"});
-  video.belongsTo(video_type, { foreignKey: "type_id"});
+  video.belongsTo(users, { as: "user", foreignKey: "user_id"});
+  video.belongsTo(video_type, { as:"video_type", foreignKey: "type_id"});
 
 
   video_comment.belongsTo(users, { as: "user", foreignKey: "user_id"});

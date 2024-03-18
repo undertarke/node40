@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "afc4d447-d4cb-4a38-9cee-18e67d67ce1c",
+		"name": "node40",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10551149",
+		"_collection_link": "https://martian-crater-545308.postman.co/workspace/Team-Workspace~cc5924ef-aba0-468f-87a1-115ad14eee4b/collection/10551149-afc4d447-d4cb-4a38-9cee-18e67d67ce1c?action=share&source=collection_link&creator=10551149"
+	},
+	"item": [
+		{
+			"name": "get video id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEyM30sImlhdCI6MTcxMDMzMzg4MSwiZXhwIjoxNzEwNzY1ODgxfQ.xNJEbXwdunmxlJLQoxMMZ-IvWFHCOW_cgo2Z61z-qJ8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEyM30sImlhdCI6MTcxMDMzMzA0MywiZXhwIjoxNzEwMzMzMzQzfQ.ZdZCNztaSTWmgBGqmhOyv8PZdX8KvGElz2yrwQHYf1o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\":116,\n    \"userName\":\"MCK\",\n    \"email\":\"mck@gmail.com\",\n    \"phone\":\"0909090\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/video/get-video-id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"video",
+						"get-video-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"email\":\"test@gmail.com\",\n    \"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\":\"test\",\n    \"email\":\"test@gmail.com\",\n    \"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get video page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/video/get-video-page/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"video",
+						"get-video-page",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get video type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/video/get-video-by-type/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"video",
+						"get-video-by-type",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
